@@ -137,3 +137,6 @@ nginx::resource::upstream { 'backend':
   },
 }
 ```
+
+#### Foreman Smart Class Parameters
+![Alt text](images/foreman_classes.jpg?raw=true "Title")
