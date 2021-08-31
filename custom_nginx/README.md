@@ -1,6 +1,6 @@
 # Custom_nginx module for Puppet
 
-this Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com> 
+This Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com> 
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ The module action descriptions are:
 * Create a forward proxy to log HTTP requests going from the internal network to the Internet including: request protocol, remote IP and time take to serve the request.
 * (Optional) Implement a proxy health check.
 
-The module has been tested in a Foreman 2.3.5 verions and the parameters have been configured to be used as Smart Class Parameters.
+The module has been tested in a Foreman 2.3.5 verions and the parameters have been configured with the option to be used as Smart Class Parameters in Foreman
 
 ## Setup
 
