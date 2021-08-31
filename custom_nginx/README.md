@@ -10,6 +10,7 @@ This Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com>
     * [Documentation](#Documentation)
     * [Classes](#Classes)
     * [Paramaters](#Parameters)
+    * [Usage](#Usage)
 
 ## Description
 
@@ -73,3 +74,17 @@ The module custom_nginx has been devided in 3 classes
  * `forward_proxy_domain_port` - Forward Proxy port (default: 8888)
  * `forward_proxy_domain_proxy` - URL to redirect/forward connections (default: https://$http_host$request_uri)
  * `forward_proxy_domain_resolver` - Name server used to resolve names of upstream into addesses (default: ['8.8.8.8','ipv6=off'] )
+
+### Usage
+
+#### Reverse Proxy
+```
+nginx::resource::server { 'domain.com' :
+    ensure      => 'present',
+    ssl         => true,
+    ssl_cert    => '/etc/ssl/certs/nginx-selfsigned.crt',
+    ssl_key     => '/etc/ssl/private/nginx-selfsigned.key',
+    listen_port => '443',
+    proxy       => 'https://10.10.10.10',
+  }
+```
