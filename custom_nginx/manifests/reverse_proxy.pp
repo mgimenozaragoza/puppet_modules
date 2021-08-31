@@ -30,13 +30,6 @@ class custom_nginx::reverse_proxy inherits custom_nginx {
 	max_fails    => 2,
 	fail_timeout => '30s',
       },
-      '10.10.10.11:443' => {
-        server       => '10.10.10.11',
-        port         => 443,
-        weight       => 1,
-	max_fails    => 2,
-	fail_timeout => '30s',
-      },
     },
   }
 
@@ -47,13 +40,6 @@ class custom_nginx::reverse_proxy inherits custom_nginx {
         server       => '20.20.20.20',
         port         => 443,
         weight       => 5,
-        max_fails    => 2,
-        fail_timeout => '30s',
-      },
-      '20.20.20.21:443' => {
-        server       => '20.20.20.21',
-        port         => 443,
-        weight       => 1,
         max_fails    => 2,
         fail_timeout => '30s',
       },
