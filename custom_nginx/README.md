@@ -76,6 +76,17 @@ The module custom_nginx has been devided in 3 classes
  * `forward_proxy_domain_resolver` - Name server used to resolve names of upstream into addesses (default: ['8.8.8.8','ipv6=off'] )
 
 ### Usage
+#### NGINX main configuration
+```
+class { '::nginx':
+    service_manage => true,
+    service_ensure => 'running',
+    service_enable => true,
+    log_format     => {
+      $custom_log_format_name => '$time_iso8601 - $remote_addr - "$request" "$status $request_time" "$http_user_agent"'
+    },
+  }
+```
 
 #### Reverse Proxy
 ```
@@ -86,5 +97,43 @@ nginx::resource::server { 'domain.com' :
     ssl_key     => '/etc/ssl/private/nginx-selfsigned.key',
     listen_port => '443',
     proxy       => 'https://10.10.10.10',
-  }
+}
+```
+
+#### Reverse Proxy Secondary Resource for domain.com
+```
+nginx::resource::location { 'domain.com_resource' :
+    ensure          => 'present',
+    ssl             => true,
+    ssl_only        => true,
+    server          => 'domain.com',
+    location        => '/resource',
+    proxy           => 'https://20.20.20.20',
+}
+```
+
+#### Forward Proxy
+```
+nginx::resource::server { 'forward_proxy' :
+    ensure      => 'present',
+    listen_port => 8888,
+    proxy       => 'https://$http_host$request_uri',
+    resolver    => ['8.8.8.8','ipv6=off'],
+    format_log  => 'custom_log_format',
+}
+```
+
+#### Health check
+```
+nginx::resource::upstream { 'backend':
+  members => {
+    '10.10.10.10:443' => {
+      server       => '10.10.10.10',
+      port         => 443,
+      weight       => 5,
+      max_fails    => 2,
+      fail_timeout => '30s',
+    },
+  },
+}
 ```
