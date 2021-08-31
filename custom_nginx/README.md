@@ -139,4 +139,9 @@ nginx::resource::upstream { 'backend':
 ```
 
 #### Foreman Smart Class Parameters
-![Alt text](images/foreman_classes.jpg?raw=true "Title")
+
+##### Puppet Classes
+![Alt text](images/foreman_classes.jpg?raw=true "Puppet Classes")
+
+##### Smart Class Parameters
+![Alt text](images/foreman_scp.jpg?raw=true "SmartClassParameters")
