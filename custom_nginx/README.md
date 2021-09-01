@@ -156,7 +156,9 @@ Import the modules into Foreman
 ![Alt text](images/foreman_import.jpg?raw=true "Import")
 
 #### Classes
+From Puppet Classes we can see the modules Classes
 ![Alt text](images/foreman_classes.jpg?raw=true "Puppet Classes")
 
 ##### Smart Class Parameters
+Accessing the main class we can access to the Smart Class Parameters section and override any value if required
 ![Alt text](images/foreman_scp.jpg?raw=true "SmartClassParameters")
