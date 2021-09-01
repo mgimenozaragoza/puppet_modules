@@ -14,7 +14,7 @@ This Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com>
 3. [Foreman](#Foreman)
     * [Installation](#Installation)
     * [Classes](#Classes)
-    * [Smart Class Parameters](#Smart Class Parameters)
+    * [Smart Class Parameters](#Smart-Class-Parameters)
 
 ## Description
 
