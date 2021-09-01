@@ -184,7 +184,7 @@ Finished in 0.3446 seconds (files took 1.41 seconds to load)
 ```
 
 #### Unit Testing Errors
-Below Unit testing error seems to be caused by the official nginx module. As unit testing was out of the scope I did not spend much time on it.
+Below Unit testing error seems to be caused by the official nginx module and, as Unit Testing was out of the scope, I did not spend much time on it.
 ```
 1) custom_nginx linux 7 custom_nginx_manage=true is expected to contain Class[custom_nginx]
   #      Failure/Error: it { should contain_class('custom_nginx') }
