@@ -13,6 +13,7 @@ This Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com>
     * [Usage](#Usage)
 3. [Foreman](#Foreman)
     * [Installation](#Installation)
+    * [Import](#Import)
     * [Classes](#Classes)
     * [Smart Class Parameters](#Smart-Class-Parameters)
 
@@ -150,8 +151,10 @@ Log into your foreman installation
 # cd /etc/puppetlabs/code/environments/gimeno_test/
 # git clone https://github.com/mgimenozaragoza/puppet_modules.git modules
 ```
+#### Import
 Import the modules into Foreman
 ![Alt text](images/foreman_import.jpg?raw=true "Import")
+
 #### Classes
 ![Alt text](images/foreman_classes.jpg?raw=true "Puppet Classes")
 
