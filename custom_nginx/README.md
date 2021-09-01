@@ -14,7 +14,7 @@ This Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com>
 3. [Foreman](#Foreman)
     * [Installation](#Installation)
     * [Classes](#Classes)
-    * [Smart Class Parameters](#SmartClassParameters)
+    * [Smart Class Parameters](#Smart Class Parameters)
 
 ## Description
 
@@ -145,6 +145,12 @@ nginx::resource::upstream { 'backend':
 ### Foreman 
 
 #### Installation
+Log into your foreman installation
+```
+# cd /etc/puppetlabs/code/environments/gimeno_test/
+# git clone https://github.com/mgimenozaragoza/puppet_modules.git modules
+```
+Import the modules into Foreman
 
 #### Classes
 ![Alt text](images/foreman_classes.jpg?raw=true "Puppet Classes")
