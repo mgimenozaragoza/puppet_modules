@@ -16,6 +16,9 @@ This Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com>
     * [Import](#Import)
     * [Classes](#Classes)
     * [Smart Class Parameters](#Smart-Class-Parameters)
+4. [Testing](#Testing)
+    * [Unit Testing](#Unit-Testing)
+    * [Unit Testing Errors](#Unit-Testing-Errors)
 
 ## Description
 
@@ -162,3 +165,31 @@ From Puppet Classes we can see the modules Classes
 ##### Smart Class Parameters
 Accessing the main class we can access to the Smart Class Parameters section and override any value if required
 ![Alt text](images/foreman_scp.jpg?raw=true "SmartClassParameters")
+
+
+### Testing
+#### Unit Testing
+Some basic unit testing has been developed to test custom_nginx_manage parameter applies correctly
+```
+# pdk test unit
+pdk (INFO): Using Ruby 2.7.3
+pdk (INFO): Using Puppet 7.9.0
+[✔] Preparing to run the unit tests.
+/opt/puppetlabs/pdk/private/ruby/2.7.3/bin/ruby -I/opt/puppetlabs/pdk/share/cache/ruby/2.7.0/gems/rspec-core-3.10.1/lib:/opt/puppetlabs/pdk/share/cache/ruby/2.7.0/gems/rspec-support-3.10.2/lib /opt/puppetlabs/pdk/share/cache/ruby/2.7.0/gems/rspec-core-3.10.1/exe/rspec --pattern spec/\{aliases,classes,defines,functions,hosts,integration,plans,tasks,type_aliases,types,unit\}/\*\*/\*_spec.rb --format progress
+Run options: exclude {:bolt=>true}
+........
+
+Finished in 0.3446 seconds (files took 1.41 seconds to load)
+8 examples, 0 failures
+```
+
+#### Unit Testing Errors
+Below Unit testing error seems to be caused by the official nginx module. As unit testing was out of the scope I did not spend much time on it.
+```
+1) custom_nginx linux 7 custom_nginx_manage=true is expected to contain Class[custom_nginx]
+  #      Failure/Error: it { should contain_class('custom_nginx') }
+  #      Puppet::PreformattedError:
+  #      Evaluation Error: Operator '[]' is not applicable to an Undef Value. (file: /etc/puppetlabs/code/environments/gimeno_test/modules/custom_nginx/spec/fixtures/modules/nginx/manifests/params.pp, line: 98, column: 8) on node testsystem
+  #      #  # /opt/puppetlabs/pdk/private/ruby/2.7.3/lib/ruby/2.7.0/benchmark.rb:308:in `realtime'
+  #      # ./spec/classes/init_spec.rb:55:in `block (3 levels) in <top (required)>'
+```
