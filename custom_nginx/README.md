@@ -5,12 +5,16 @@ This Module was create by Manel Gimeno <m.gimeno.zaragoza@gmail.com>
 ## Table of Contents
 
 1. [Description](#description)
-1. [Setup](#setup)
+2. [Setup](#Setup)
     * [Requirements](#Requirements)
     * [Documentation](#Documentation)
     * [Classes](#Classes)
     * [Paramaters](#Parameters)
     * [Usage](#Usage)
+3. [Foreman](#Foreman)
+    * [Installation](#Installation)
+    * [Classes](#Classes)
+    * [Smart Class Parameters](#SmartClassParameters)
 
 ## Description
 
@@ -138,9 +142,11 @@ nginx::resource::upstream { 'backend':
 }
 ```
 
-#### Foreman Smart Class Parameters
+### Foreman 
 
-##### Puppet Classes
+#### Installation
+
+#### Classes
 ![Alt text](images/foreman_classes.jpg?raw=true "Puppet Classes")
 
 ##### Smart Class Parameters
