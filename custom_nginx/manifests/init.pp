@@ -8,10 +8,10 @@
 #  3 - (Optional) Implement a proxy health check.
 #
 class custom_nginx (
-  Boolean $custom_nginx_manage             = $custom_nginx::params::custom_nginx_manage,
+  Boolean $custom_nginx_manage     = $custom_nginx::params::custom_nginx_manage,
   $service_ensure                  = $custom_nginx::params::service_ensure,
   $service_enable                  = $custom_nginx::params::service_enable,
-  Boolean $service_manage                  = $custom_nginx::params::service_manage,
+  Boolean $service_manage          = $custom_nginx::params::service_manage,
   $custom_log_format_name          = $custom_nginx::params::custom_log_format_name,
   $custom_log_format               = $custom_nginx::params::custom_log_format,
   $ssl_cert                        = $custom_nginx::params::ssl_cert,
@@ -39,12 +39,13 @@ class custom_nginx (
 
     if ($custom_nginx_manage) {
       if ($::osfamily == "RedHat" and $::operatingsystemmajrelease > '5') {
+
         contain custom_nginx::config
         contain custom_nginx::forward_proxy
         contain custom_nginx::reverse_proxy
-        Class['custom_nginx::config'] ->
-        Class['custom_nginx::forward_proxy'] ->
-        Class['custom_nginx::reverse_proxy']
+
+        Class['custom_nginx::config'] -> Class['custom_nginx::forward_proxy']
+        Class['custom_nginx::config'] -> Class['custom_nginx::reverse_proxy']
       }
     }
 }
