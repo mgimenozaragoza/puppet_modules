@@ -27,7 +27,7 @@ class custom_nginx (
   $reverse_proxy_resource_ssl_only = $custom_nginx::params::reverse_proxy_resource_ssl_only,
   $reverse_proxy_resource_location = $custom_nginx::params::reverse_proxy_resource_location,
   $reverse_proxy_resource_proxy    = $custom_nginx::params::reverse_proxy_resource_proxy,
-  $forward_proxy_ensure            = $custom_nginx::params::forward_proxy_ensure,
+  $forward_proxy_domain_ensure     = $custom_nginx::params::forward_proxy_domain_ensure,
   $forward_proxy_domain_name       = $custom_nginx::params::forward_proxy_domain_name,
   $forward_proxy_domain_port       = $custom_nginx::params::forward_proxy_domain_port,
   $forward_proxy_domain_proxy      = $custom_nginx::params::forward_proxy_domain_proxy,
