@@ -36,7 +36,7 @@ The module has been tested in a Foreman v2.3.5 and parameters have been configur
 
 * concat puppet module <https://forge.puppet.com/modules/puppetlabs/concat>
 * stdlib puppet module <https://forge.puppet.com/modules/puppetlabs/stdlib>
-* official nginx puppet module <https://forge.puppet.com/modules/puppet/nginx>
+* nginx puppet module  <https://forge.puppet.com/modules/puppet/nginx>
 
 Both requirements are included in the repository
 
