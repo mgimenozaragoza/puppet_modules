@@ -45,9 +45,9 @@ Both requirements are included in the repository
 
 The module custom_nginx has been devided in 3 classes
 
-* Config - Setup is the general nginx configuration
-* Reverse Proxy - Setup the Revers Proxy
-* Forward Proxy - Setup the Forward Proxy
+* Config - General nginx configuration seup
+* Reverse Proxy - Reverse Proxy setup
+* Forward Proxy - Forward Proxy setup
 
 ### Nginx configuration Parameters 
  * `custom_nginx_manage`	- Boolean value to enable or disable the whole custom_nginx puppet module (default: true)
